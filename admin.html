@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>后台管理 · 南京工业大学</title>
+<meta name="description" content="南京工业大学门户网站后台管理：新闻公告与用户账号维护。">
+<meta name="theme-color" content="#14417a">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/jpeg" href="assets/images/njtech-emblem.jpg">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body data-page="admin">
+
+<a class="skip-link" href="#main">跳到主要内容</a>
+
+<header id="site-header"></header>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container">
+      <ul class="breadcrumb">
+        <li><a href="index.html" data-i18n="nav.home"></a></li>
+        <li data-i18n="nav.admin"></li>
+      </ul>
+      <h1 data-i18n="admin.title"></h1>
+      <p data-i18n="admin.desc"></p>
+    </div>
+  </section>
+
+  <div class="container admin-layout">
+
+    <!-- ============ 侧栏 ============ -->
+    <aside class="admin-side">
+      <div class="admin-side-title" id="side-user"></div>
+      <ul class="admin-nav" id="admin-nav">
+        <li>
+          <button type="button" data-tab="overview" aria-current="true">
+            <span data-icon="chart"></span><span data-i18n="admin.nav.overview"></span>
+          </button>
+        </li>
+        <li>
+          <button type="button" data-tab="news">
+            <span data-icon="news"></span><span data-i18n="admin.nav.news"></span>
+          </button>
+        </li>
+        <li>
+          <button type="button" data-tab="users">
+            <span data-icon="users"></span><span data-i18n="admin.nav.users"></span>
+          </button>
+        </li>
+      </ul>
+      <div class="admin-danger">
+        <button type="button" class="btn btn-outline btn-sm" id="btn-reset">
+          <span data-icon="refresh"></span><span data-i18n="admin.nav.reset"></span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- ============ 主区域 ============ -->
+    <div class="admin-main">
+
+      <div id="storage-warning"></div>
+
+      <!-- 概览 -->
+      <section class="admin-panel" id="panel-overview">
+        <div class="admin-stats" id="overview-stats"></div>
+        <div class="card card-flush">
+          <div style="padding:20px 22px 0">
+            <h2 class="card-title" data-i18n="admin.recent.title"></h2>
+            <p class="card-text" data-i18n="admin.recent.desc"></p>
+          </div>
+          <div class="table-wrap" style="border:0;box-shadow:none;margin-top:14px">
+            <table class="data-table admin-table">
+              <thead>
+                <tr>
+                  <th scope="col" data-i18n="admin.news.col.category"></th>
+                  <th scope="col" data-i18n="admin.news.col.title"></th>
+                  <th scope="col" data-i18n="admin.news.col.date"></th>
+                  <th scope="col" data-i18n="admin.news.col.views"></th>
+                </tr>
+              </thead>
+              <tbody id="overview-recent"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- 新闻管理 -->
+      <section class="admin-panel hidden" id="panel-news">
+        <div class="admin-panel-head">
+          <div>
+            <h2 data-i18n="admin.news.title"></h2>
+            <p data-i18n="admin.news.desc"></p>
+          </div>
+          <button type="button" class="btn" id="btn-add-news">
+            <span data-icon="plus"></span><span data-i18n="admin.news.add"></span>
+          </button>
+        </div>
+
+        <div class="admin-toolbar">
+          <div class="search-box">
+            <label class="sr-only" for="news-filter" data-i18n="common.search"></label>
+            <span data-icon="search"></span>
+            <input class="input" type="search" id="news-filter"
+                   data-i18n-placeholder="admin.news.searchPlaceholder" autocomplete="off">
+          </div>
+          <span class="text-muted" id="news-count" style="font-size:13px"></span>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table admin-table">
+            <thead>
+              <tr>
+                <th scope="col" style="width:62px" data-i18n="admin.news.col.id"></th>
+                <th scope="col" data-i18n="admin.news.col.title"></th>
+                <th scope="col" data-i18n="admin.news.col.category"></th>
+                <th scope="col" data-i18n="admin.news.col.date"></th>
+                <th scope="col" data-i18n="admin.news.col.author"></th>
+                <th scope="col" class="num" data-i18n="admin.news.col.views"></th>
+                <th scope="col" data-i18n="common.actions"></th>
+              </tr>
+            </thead>
+            <tbody id="news-body"></tbody>
+          </table>
+        </div>
+        <nav class="pagination" id="news-pagination" aria-label="分页"></nav>
+      </section>
+
+      <!-- 用户管理 -->
+      <section class="admin-panel hidden" id="panel-users">
+        <div class="admin-panel-head">
+          <div>
+            <h2 data-i18n="admin.users.title"></h2>
+            <p data-i18n="admin.users.desc"></p>
+          </div>
+          <button type="button" class="btn" id="btn-add-user">
+            <span data-icon="plus"></span><span data-i18n="admin.users.add"></span>
+          </button>
+        </div>
+
+        <div class="admin-toolbar">
+          <div class="search-box">
+            <label class="sr-only" for="user-filter" data-i18n="common.search"></label>
+            <span data-icon="search"></span>
+            <input class="input" type="search" id="user-filter"
+                   data-i18n-placeholder="admin.users.searchPlaceholder" autocomplete="off">
+          </div>
+          <span class="text-muted" id="user-count" style="font-size:13px"></span>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table admin-table">
+            <thead>
+              <tr>
+                <th scope="col" data-i18n="admin.users.col.username"></th>
+                <th scope="col" data-i18n="admin.users.col.name"></th>
+                <th scope="col" data-i18n="admin.users.col.role"></th>
+                <th scope="col" data-i18n="admin.users.col.college"></th>
+                <th scope="col" data-i18n="admin.users.col.class"></th>
+                <th scope="col" data-i18n="admin.users.col.status"></th>
+                <th scope="col" data-i18n="common.actions"></th>
+              </tr>
+            </thead>
+            <tbody id="users-body"></tbody>
+          </table>
+        </div>
+        <nav class="pagination" id="users-pagination" aria-label="分页"></nav>
+      </section>
+
+    </div>
+  </div>
+
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="js/store.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/pages/admin.js"></script>
+</body>
+</html>

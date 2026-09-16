@@ -1,0 +1,89 @@
+/* ==========================================================================
+   admin.css — 后台管理专用补充样式（仅在 admin.html 引入）
+   ========================================================================== */
+
+/* 概览页的最近发布列表紧凑化 */
+#panel-overview .data-table td,
+#panel-overview .data-table th { padding: 11px 16px; }
+
+/* 状态胶囊 */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+}
+.status-pill::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.status-pill.is-active { background: var(--success-bg); color: var(--success); }
+.status-pill.is-disabled { background: var(--ink-100); color: var(--ink-500); }
+
+/* 角色标记 */
+.role-tag {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 9px;
+  border-radius: var(--radius-pill);
+  background: var(--brand-100);
+  color: var(--brand-700);
+}
+.role-tag.role-admin { background: #ede4fb; color: #5b3fa8; }
+.role-tag.role-teacher { background: var(--gold-100); color: var(--gold-600); }
+.role-tag.role-student { background: var(--brand-100); color: var(--brand-700); }
+
+/* 表格中的标题列限宽，避免长标题把操作列挤走 */
+.admin-table .col-title {
+  max-width: 420px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.admin-table .col-title a { font-weight: 600; color: var(--ink-900); }
+.admin-table .col-title a:hover { color: var(--brand-600); }
+
+/* 模态框内的表单更紧凑 */
+.modal-form .form-row { gap: 14px; }
+.modal-form .field { gap: 6px; }
+.modal-form .textarea { min-height: 96px; font-size: 14px; }
+.modal-form .textarea-lg { min-height: 150px; }
+
+/* 侧栏底部的危险操作区 */
+.admin-danger {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--ink-100);
+}
+.admin-danger .btn { width: 100%; }
+
+/* 后台提示条 */
+.admin-tip {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--brand-50);
+  border: 1px solid var(--brand-200);
+  color: var(--brand-800);
+  font-size: 13px;
+}
+.admin-tip svg { width: 17px; height: 17px; flex: 0 0 auto; margin-top: 2px; }
+
+@media (max-width: 1080px) {
+  .admin-danger { margin-top: 12px; padding-top: 12px; border-top: 0; }
+  .admin-danger .btn { width: auto; }
+}
+
+@media (max-width: 640px) {
+  .admin-toolbar { flex-direction: column; align-items: stretch; }
+  .admin-toolbar .btn { width: 100%; }
+  .admin-table .col-title { max-width: 200px; }
+}

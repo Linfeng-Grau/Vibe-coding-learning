@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>南京工业大学 门户网站 · 首页</title>
+<meta name="description" content="南京工业大学门户网站演示站点：学校概况、新闻公告、院系设置、课程表与成绩查询。">
+<meta name="theme-color" content="#14417a">
+<link rel="icon" type="image/jpeg" href="assets/images/njtech-emblem.jpg">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="index">
+
+<a class="skip-link" href="#main">跳到主要内容</a>
+
+<header id="site-header"></header>
+
+<noscript>
+  <div class="container" style="padding:16px 20px">
+    <div class="alert alert-warn">
+      本站的导航与内容依赖 JavaScript 渲染，请启用 JavaScript 后重新打开页面。
+      This site requires JavaScript to render its navigation and content.
+    </div>
+  </div>
+</noscript>
+
+<main id="main">
+
+  <!-- ================= Hero ================= -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <span class="hero-eyebrow" id="hero-eyebrow"></span>
+        <h1 id="hero-title"></h1>
+        <p class="hero-motto" id="hero-motto"></p>
+        <p class="hero-desc" id="hero-desc"></p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="about.html">
+            <span data-i18n="home.hero.cta1"></span>
+          </a>
+          <a class="btn btn-ghost-light" href="news.html">
+            <span data-i18n="home.hero.cta2"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <span class="hero-credit" id="hero-credit"></span>
+  </section>
+
+  <!-- ================= 学校数据 ================= -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title" data-i18n="home.overview.title">
+            <span class="section-title-en" data-i18n="home.overview.titleEn"></span>
+          </h2>
+          <p class="section-desc" data-i18n="home.overview.desc"></p>
+        </div>
+        <a class="btn btn-outline btn-sm" href="about.html" data-i18n="common.more"></a>
+      </div>
+      <div class="stat-strip" id="stat-strip"></div>
+    </div>
+  </section>
+
+  <!-- ================= 办学特色 ================= -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title" data-i18n="home.highlight.title">
+            <span class="section-title-en" data-i18n="home.highlight.titleEn"></span>
+          </h2>
+          <p class="section-desc" data-i18n="home.highlight.desc"></p>
+        </div>
+      </div>
+      <div class="grid grid-4" id="highlight-grid"></div>
+    </div>
+  </section>
+
+  <!-- ================= 南工要闻 ================= -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title" data-i18n="home.news.title">
+            <span class="section-title-en" data-i18n="home.news.titleEn"></span>
+          </h2>
+          <p class="section-desc" data-i18n="home.news.desc"></p>
+        </div>
+        <a class="btn btn-outline btn-sm" href="news.html?category=ngyw" data-i18n="common.more"></a>
+      </div>
+      <div class="card" id="news-list"></div>
+    </div>
+  </section>
+
+  <!-- ================= 通知公告 / 学术活动 ================= -->
+  <section class="section section-alt">
+    <div class="container grid grid-2">
+      <div>
+        <div class="section-head">
+          <div>
+            <h2 class="section-title" data-i18n="home.notice.title">
+              <span class="section-title-en" data-i18n="home.notice.titleEn"></span>
+            </h2>
+            <p class="section-desc" data-i18n="home.notice.desc"></p>
+          </div>
+          <a class="btn btn-outline btn-sm" href="news.html?category=tzgg" data-i18n="common.more"></a>
+        </div>
+        <div class="card" id="notice-list"></div>
+      </div>
+      <div>
+        <div class="section-head">
+          <div>
+            <h2 class="section-title" data-i18n="home.academic.title">
+              <span class="section-title-en" data-i18n="home.academic.titleEn"></span>
+            </h2>
+            <p class="section-desc" data-i18n="home.academic.desc"></p>
+          </div>
+          <a class="btn btn-outline btn-sm" href="news.html?category=xshd" data-i18n="common.more"></a>
+        </div>
+        <div class="card" id="academic-list"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 快速服务 ================= -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title" data-i18n="home.entry.title">
+            <span class="section-title-en" data-i18n="home.entry.titleEn"></span>
+          </h2>
+          <p class="section-desc" data-i18n="home.entry.desc"></p>
+        </div>
+      </div>
+      <div class="grid grid-3">
+        <a class="card card-hover entry-card" href="about.html">
+          <span class="entry-icon" data-icon="info"></span>
+          <h3 data-i18n="home.entry.about"></h3>
+          <p data-i18n="home.entry.aboutText"></p>
+        </a>
+        <a class="card card-hover entry-card" href="colleges.html">
+          <span class="entry-icon" data-icon="grid"></span>
+          <h3 data-i18n="home.entry.colleges"></h3>
+          <p data-i18n="home.entry.collegesText"></p>
+        </a>
+        <a class="card card-hover entry-card" href="news.html">
+          <span class="entry-icon" data-icon="news"></span>
+          <h3 data-i18n="home.entry.news"></h3>
+          <p data-i18n="home.entry.newsText"></p>
+        </a>
+        <a class="card card-hover entry-card" href="courses.html">
+          <span class="entry-icon" data-icon="calendar"></span>
+          <h3 data-i18n="home.entry.courses"></h3>
+          <p data-i18n="home.entry.coursesText"></p>
+        </a>
+        <a class="card card-hover entry-card" href="grades.html">
+          <span class="entry-icon" data-icon="chart"></span>
+          <h3 data-i18n="home.entry.grades"></h3>
+          <p data-i18n="home.entry.gradesText"></p>
+        </a>
+        <a class="card card-hover entry-card" href="login.html">
+          <span class="entry-icon" data-icon="login"></span>
+          <h3 data-i18n="home.entry.login"></h3>
+          <p data-i18n="home.entry.loginText"></p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 常用链接 ================= -->
+  <section class="section section-alt section-tight">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title" data-i18n="home.links.title">
+            <span class="section-title-en" data-i18n="home.links.titleEn"></span>
+          </h2>
+        </div>
+      </div>
+      <div class="grid grid-3" id="quick-links"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="js/store.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/pages/home.js"></script>
+</body>
+</html>

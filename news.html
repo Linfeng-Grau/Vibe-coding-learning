@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>新闻公告 · 南京工业大学</title>
+<meta name="description" content="南京工业大学南工要闻、通知公告与学术活动，支持分类筛选与关键词搜索。">
+<meta name="theme-color" content="#14417a">
+<link rel="icon" type="image/jpeg" href="assets/images/njtech-emblem.jpg">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="news">
+
+<a class="skip-link" href="#main">跳到主要内容</a>
+
+<header id="site-header"></header>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container">
+      <ul class="breadcrumb">
+        <li><a href="index.html" data-i18n="nav.home"></a></li>
+        <li data-i18n="nav.news"></li>
+      </ul>
+      <h1 data-i18n="news.title"></h1>
+      <p data-i18n="news.desc"></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="toolbar">
+        <div class="filter-tabs" id="filter-tabs" role="group">
+          <button type="button" class="filter-tab" data-category="all" aria-pressed="true"
+                  data-i18n="news.filter.all"></button>
+          <button type="button" class="filter-tab" data-category="ngyw" aria-pressed="false"
+                  data-i18n="news.cat.ngyw"></button>
+          <button type="button" class="filter-tab" data-category="tzgg" aria-pressed="false"
+                  data-i18n="news.cat.tzgg"></button>
+          <button type="button" class="filter-tab" data-category="xshd" aria-pressed="false"
+                  data-i18n="news.cat.xshd"></button>
+        </div>
+        <div class="search-box">
+          <label class="sr-only" for="news-search" data-i18n="common.search"></label>
+          <span id="search-icon" aria-hidden="true"></span>
+          <input class="input" type="search" id="news-search"
+                 data-i18n-placeholder="common.searchPlaceholder" autocomplete="off">
+        </div>
+      </div>
+
+      <p class="text-muted" id="result-count" style="font-size:13.5px"></p>
+
+      <div class="card mt-2" id="news-list"></div>
+
+      <nav class="pagination" id="pagination" aria-label="分页"></nav>
+
+    </div>
+  </section>
+
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="js/store.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/pages/news.js"></script>
+</body>
+</html>
